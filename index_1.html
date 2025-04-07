@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Distribution & Hypothesis Testing Tool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Statistics Web Tool</h1>
+
+  <h2>Distribution Visualizer</h2>
+  <canvas id="distributionChart"></canvas>
+  <br>
+  <button onclick="exportPDF()">Export Chart as PDF</button>
+  <button onclick="exportCSV()">Export Data as CSV</button>
+  <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  <br><br>
+  <div id="dataTableContainer"></div>
+
+  <hr>
+
+  <h2>Hypothesis Testing</h2>
+  <label for="testType">Select Test:</label>
+  <select id="testType" onchange="updateTestForm()">
+    <option value="">--Select--</option>
+    <option value="z">Z-Test (Large Sample)</option>
+    <option value="t">T-Test (Small Sample)</option>
+    <option value="chi2">Chi-Square Test</option>
+  </select>
+
+  <div id="testFormContainer"></div>
+  <div id="testResult"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
